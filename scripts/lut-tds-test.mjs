@@ -13,8 +13,8 @@ function eq(actual, expected, label) {
   else { failed++; console.log(`  FAIL ${label}\n     expected: ${JSON.stringify(expected)}\n     actual:   ${JSON.stringify(actual)}`); }
 }
 
-// The demo business only: DiceCodes, Karnataka.
-const profile = { businessName: 'DiceCodes', country: 'India', state: 'Karnataka', gstin: '29ABCDE1234F1ZW', pin: '560001', lutArn: 'AD290426123456X', lutFy: '2026-27' };
+// The demo business only: AmanNegi, Karnataka.
+const profile = { businessName: 'AmanNegi', country: 'India', state: 'Karnataka', gstin: '29ABCDE1234F1ZW', pin: '560001', lutArn: 'AD290426123456X', lutFy: '2026-27' };
 const usClient = { name: 'Acme Inc', country: 'United States', state: '' };
 const sezClient = { name: 'SEZ Unit', country: 'India', state: 'Karnataka', gstin: '29AAACS1234A1Z5', isSEZ: true, pin: '560100' };
 const items = [{ name: 'Software services', hsn: '998314', quantity: 1, rate: 100000, taxPercent: 18 }];

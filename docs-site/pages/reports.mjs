@@ -320,7 +320,7 @@ export default [
 </table>
 <p>Documents with no cost centre are added up in an <b>Untagged</b> row, so the <b>Total</b> row is the whole business. ${ui('Print / PDF')}, ${ui('Excel')} and ${ui('CSV')} download the table. Purchase bills have no currency, so they count only when the currency is INR.</p>
 <h3>Worked example</h3>
-<p>DiceCodes adds two cost centres, <b>Branch: Ludhiana</b> (code LDH) and <b>Project Mehta House</b>. In April it enters:</p>
+<p>AmanNegi adds two cost centres, <b>Branch: Ludhiana</b> (code LDH) and <b>Project Mehta House</b>. In April it enters:</p>
 <ul>
   <li>An invoice tagged Branch: Ludhiana: ₹10,000 + 18% GST = ₹11,800.</li>
   <li>An invoice tagged Project Mehta House: ₹20,000 + 18% GST = ₹23,600, and a credit note on it for ₹2,000 + ₹360 GST.</li>

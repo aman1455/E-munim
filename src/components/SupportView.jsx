@@ -1,5 +1,5 @@
 // v1.10.75 - Support & About. Who builds the app, how to help (free ways
-// first, then UPI), and what DiceCodes does for businesses. Decided with the
+// first, then UPI), and what AmanNegi does for businesses. Decided with the
 // maintainer: ask gently, never lock a feature, never print anything on a
 // user's invoice. UPI only for money: it works offline (the QR is drawn here)
 // and costs the giver nothing.
@@ -20,10 +20,10 @@ import { SafePrivateSection } from './SafePrivateNote';
 const inr = (n) => `₹${Number(n).toLocaleString('en-IN')}`;
 
 const SUPPORT_UPI_ID = '7455899201-3@ybl';
-const UPI_NAME = 'DiceCodes';
+const UPI_NAME = 'AmanNegi';
 const REPO = 'https://github.com/aman1455/gst-billing-desktop';
-const EMAIL = 'contact@dicecodes.com';
-const SITE = 'https://dicecodes.com';
+const EMAIL = 'contact@AmanNegi.com';
+const SITE = 'https://AmanNegi.com';
 // v1.10.83 - ₹200 is the smallest suggested amount; "Any amount" (0) comes last.
 const AMOUNTS = [200, 500, 1000, 0];
 
@@ -94,7 +94,7 @@ export default function SupportView() {
         <div>
           <h3 style={{ margin: '0 0 0.4rem', fontSize: '1.05rem' }}>Free, and it stays free <HelpButton title="Free, and it stays free" doc="support#about" size={16} /></h3>
           <p style={{ margin: 0, color: 'var(--text-secondary)', lineHeight: 1.6, maxWidth: '70ch' }}>
-            E-Munim is built and maintained by <b>DiceCodes</b> in India. No ads, no account, no locked features,
+            E-Munim is built and maintained by <b>AmanNegi</b> in India. No ads, no account, no locked features,
             and your invoices never leave this computer. If it saves you time every month, you can help keep the
             fixes and new features coming.
           </p>
@@ -131,7 +131,7 @@ export default function SupportView() {
             {businessName && (
               <label style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', marginTop: '0.35rem', cursor: 'pointer' }}>
                 <input type="checkbox" checked={withName} onChange={(e) => setWithName(e.target.checked)} />
-                Include my business name, so DiceCodes can thank you
+                Include my business name, so AmanNegi can thank you
               </label>
             )}
           </div>
@@ -199,7 +199,7 @@ export default function SupportView() {
       <ProblemLog />
 
       <div className="glass-panel" style={card}>
-        <h3 style={{ margin: '0 0 0.25rem', fontSize: '1rem' }}>Work with DiceCodes <HelpButton title="Work with DiceCodes" doc="support#services" size={16} /></h3>
+        <h3 style={{ margin: '0 0 0.25rem', fontSize: '1rem' }}>Work with AmanNegi <HelpButton title="Work with AmanNegi" doc="support#services" size={16} /></h3>
         <p style={{ margin: '0 0 1rem', fontSize: '0.82rem', color: 'var(--text-muted)' }}>The team behind this app builds software for businesses too.</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', marginBottom: '1.1rem' }}>
           {SERVICES.map((w) => (
@@ -216,7 +216,7 @@ export default function SupportView() {
           <a className="btn btn-primary" href={`mailto:${EMAIL}?subject=${encodeURIComponent('Project enquiry (from E-Munim)')}`}>
             <Mail size={16} /> Email {EMAIL}
           </a>
-          <a className="btn btn-secondary" href={SITE} target="_blank" rel="noopener noreferrer"><Globe size={16} /> dicecodes.com</a>
+          <a className="btn btn-secondary" href={SITE} target="_blank" rel="noopener noreferrer"><Globe size={16} /> AmanNegi.com</a>
         </div>
       </div>
     </div>

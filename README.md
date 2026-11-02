@@ -121,7 +121,7 @@ From then on, click the **Free GST Billing** icon on your Desktop: it starts the
 
 ## Screenshots
 
-Real screens from the app, with a made-up demo business (DiceCodes, fake GSTIN and bank details).
+Real screens from the app, with a made-up demo business (AmanNegi, fake GSTIN and bank details).
 
 <table>
   <tr>
@@ -712,7 +712,7 @@ The deep-dive material lives in **[docs/](./docs/)**:
 
 ## Why Is This Free?
 
-Free GST Billing Software is built and maintained by [DiceCodes](mailto:Contact@dicecodes.com). It is:
+Free GST Billing Software is built and maintained by [AmanNegi](mailto:Contact@AmanNegi.com). It is:
 
 - **Open-source** under the MIT license — fork it, modify it, use it commercially
 - **Community-driven** — features are built based on what users actually need
@@ -737,7 +737,7 @@ If the app saves you time, you can help keep it going:
 - 🐛 **[Report a bug](https://github.com/aman1455/gst-billing-desktop/issues/new?template=bug_report.yml) or [ask for a feature](https://github.com/aman1455/gst-billing-desktop/issues/new?template=feature_request.yml)**: fixes and features ship every Saturday
 - 💛 **UPI, any amount:** `princeramgarhiaa-1@okaxis` (also as a QR code in the app, under **Support & About**)
 
-**Work with DiceCodes:** custom software and web apps, customising this app for your business, setup and data migration, support plans, AI integration and automation, and mobile apps. [contact@dicecodes.com](mailto:contact@dicecodes.com)
+**Work with AmanNegi:** custom software and web apps, customising this app for your business, setup and data migration, support plans, AI integration and automation, and mobile apps. [contact@AmanNegi.com](mailto:contact@AmanNegi.com)
 
 ---
 
@@ -908,7 +908,7 @@ CSV import is supported today for clients and products. Direct Tally XML import 
 
 ## Contact & Support
 
-- **Email:** [Contact@dicecodes.com](mailto:Contact@dicecodes.com)
+- **Email:** [Contact@AmanNegi.com](mailto:Contact@AmanNegi.com)
 - **Report a problem:** [bug report form](https://github.com/aman1455/gst-billing-desktop/issues/new?template=bug_report.yml) · **Ask for a feature:** [feature form](https://github.com/aman1455/gst-billing-desktop/issues/new?template=feature_request.yml) (fixes and features ship every Saturday)
 - **Releases:** [GitHub Releases](https://github.com/aman1455/gst-billing-desktop/releases)
 - **Discussions:** *(coming soon)*
@@ -925,14 +925,14 @@ This project is licensed under the [MIT License](LICENSE) — free to use, modif
 
 ### Ready to stop paying for billing software?
 
-[**⬇ Download Now**](https://github.com/aman1455/gst-billing-desktop/releases/latest/download/Free-GST-Billing.zip) &nbsp;·&nbsp; [⭐ **Star on GitHub**](https://github.com/aman1455/gst-billing-desktop) &nbsp;·&nbsp; [📖 **Read the User Guide**](docs/USER_GUIDE.md) &nbsp;·&nbsp; [🐛 **Report an Issue**](https://github.com/aman1455/gst-billing-desktop/issues) &nbsp;·&nbsp; [📧 **Email DiceCodes**](mailto:Contact@dicecodes.com)
+[**⬇ Download Now**](https://github.com/aman1455/gst-billing-desktop/releases/latest/download/Free-GST-Billing.zip) &nbsp;·&nbsp; [⭐ **Star on GitHub**](https://github.com/aman1455/gst-billing-desktop) &nbsp;·&nbsp; [📖 **Read the User Guide**](docs/USER_GUIDE.md) &nbsp;·&nbsp; [🐛 **Report an Issue**](https://github.com/aman1455/gst-billing-desktop/issues) &nbsp;·&nbsp; [📧 **Email AmanNegi**](mailto:Contact@AmanNegi.com)
 
 ---
 
-**Free GST Billing Software** by [DiceCodes](mailto:Contact@dicecodes.com) · MIT Licensed · v1.10.42
+**Free GST Billing Software** by [AmanNegi](mailto:Contact@AmanNegi.com) · MIT Licensed · v1.10.42
 
 <sub>Free GST billing software India · Free GST invoice software for small business · Open source GST billing software · Free alternative to Tally Prime Vyapar Zoho Books ClearTax myBillBook Marg ERP · No subscription invoice software · Offline billing software India · GSTR-1 GSTR-3B filing software free · GSTR-2B reconciliation tool free · TDS Form 26Q TCS Form 27EQ software · Section 194Q 206C(1H) TCS calculator with ₹50 lakh threshold · UTGST invoice software · CGST SGST IGST auto calculator · E-way bill JSON generator free · HSN SAC code invoice generator · Bill of Supply generator · Delivery Challan software · Credit Note Debit Note software · Proforma invoice estimate software · Composition scheme invoice · UPI QR invoice maker · Thermal receipt printer software 58mm 80mm · Direct vector thermal print software · POS billing software free India · Retail shop kirana billing software · Restaurant cafe billing software · Freelancer consultant invoice software India · Multi-currency invoice generator (USD EUR GBP AED SGD AUD JPY) 22 countries · Country-aware VAT SST MwSt TVA PPN tax labels · Recurring invoice software · Payment receipt voucher software · Bulk PDF invoice export · Google Drive backup billing software · Automatic daily backup + Trash bin · Multi-business multi-GSTIN switcher · Multi-language invoice Hindi Tamil Marathi Bengali · Dark mode PWA billing app · Rich-text Terms & Conditions with 13 India presets · OCR bill scan tesseract · Ctrl+K command palette · Split-view live PDF preview · Income Tax (ITR) computation old vs new regime 234B 234C · Client credit balance carry-forward · Watermark DUPLICATE DRAFT PDF · Rule 48 multi-copy (Original Duplicate Triplicate) · WhatsApp share invoice PDF · Self-file GST return software · GST invoice software without subscription · No signup no login billing software · Vyapar alternative open source · Tally alternative free · Zoho Books alternative · ClearTax alternative · myBillBook alternative · Marg ERP alternative · Made in India</sub>
 
-Made in India 🇮🇳 · [DiceCodes](https://dicecodes.com)
+Made in India 🇮🇳 · [AmanNegi](https://AmanNegi.com)
 
 </div>

@@ -14,7 +14,7 @@ function eq(actual, expected, label) {
 }
 
 const po = {
-  id: 'po_1', poNumber: 'PO/26-27/0001', supplierName: 'DiceCodes Paper Mart', supplierGstin: '29AAAAA0000A1Z5', interstate: false,
+  id: 'po_1', poNumber: 'PO/26-27/0001', supplierName: 'AmanNegi Paper Mart', supplierGstin: '29AAAAA0000A1Z5', interstate: false,
   items: [
     { name: 'A4 Paper', hsn: '4802', quantity: 10, unit: 'Ream', rate: 250, taxPercent: 12, cessPercent: 0 },
     { name: 'Gel Pen', hsn: '9608', quantity: 100, unit: 'Pcs', rate: 10, taxPercent: 18, cessPercent: 0 },
@@ -54,7 +54,7 @@ console.log('\n[#112] Status from the bills saved from the PO');
 console.log('\n[#112] Convert to purchase bill');
 {
   const f = billFormFromPo(po, []);
-  eq([f.supplierName, f.supplierGstin, f.interstate, f.invoiceNumber, f.fromPo], ['DiceCodes Paper Mart', '29AAAAA0000A1Z5', false, '', 'po_1'], 'Supplier filled in, bill number left empty, linked to the PO');
+  eq([f.supplierName, f.supplierGstin, f.interstate, f.invoiceNumber, f.fromPo], ['AmanNegi Paper Mart', '29AAAAA0000A1Z5', false, '', 'po_1'], 'Supplier filled in, bill number left empty, linked to the PO');
   eq(f.items[0], { name: 'A4 Paper', hsn: '4802', quantity: 10, unit: 'Ream', rate: 250, taxPercent: 12, cessPercent: 0 }, 'Items with rates, HSN, GST and unit');
   eq(billFormFromPo(po, [{ fromPo: 'po_1', items: [{ name: 'A4 Paper', quantity: 10 }] }]).items.map(i => i.name), ['Gel Pen'], 'A second bill gets only what is still to come');
 }

@@ -62,7 +62,7 @@ export default [
   <tr><td><code>nodejs.org</code></td><td>During install or update, only if your computer has no recent Node.js</td><td>Downloads Node.js, the engine the app runs on, into the app's own folder. On Windows, if that fails, the installer asks before using Windows' own installer (winget).</td></tr>
   <tr><td><code>registry.npmjs.org</code></td><td>Only if the app's packages are missing or damaged and the launcher repairs them</td><td>Downloads the app's packages again. The release ZIP already contains them, so this normally never happens.</td></tr>
   <tr><td><code>accounts.google.com</code>, <code>www.googleapis.com</code> (Google)</td><td>Only after you set up Google Drive with your own Google key and sign in</td><td>Signs in to your Google account and saves invoice PDFs and backups to your Drive. The app can see only the files it put there itself. Offline mode stops the automatic copy of each PDF.</td></tr>
-  <tr><td><code>dicecodes.com</code> (these help pages)</td><td>When you click a ${ui('?')} button or the User Guide</td><td>Opens this guide in your browser.</td></tr>
+  <tr><td><code>AmanNegi.com</code> (these help pages)</td><td>When you click a ${ui('?')} button or the User Guide</td><td>Opens this guide in your browser.</td></tr>
   <tr><td><code>github.com</code> (issues)</td><td>When you click ${ui('Report')} or Report a problem</td><td>Opens a problem form on GitHub. See <a href="#problem-reports">Problem reports</a>.</td></tr>
   <tr><td>WhatsApp, the GST portal, NSDL and other links</td><td>When you click them</td><td>Ordinary links that open in your browser, such as sharing an invoice on WhatsApp or opening the GST portal.</td></tr>
 </table></div>
@@ -85,7 +85,7 @@ export default [
 <ul>
   <li><strong>It stays free, forever.</strong> There will be no paid version, no locked features, no ads and no tracking. And because the code is open source under the MIT licence, the app you have today can always be used, copied and kept by anyone, even if we stopped working on it. Nobody can take it away or start charging you for it.</li>
   <li><strong>It costs very little to keep going.</strong> The app runs on your computer, so there are no servers and no cloud bills for us to pay.</li>
-  <li><strong>How we earn.</strong> Free GST Billing is made by DiceCodes, a small software company in India. We earn from paid work for businesses that want it (custom features, setup and moving data in, support plans) and from people who choose to support the project. See <a href="support.html">Support &amp; About</a>.</li>
+  <li><strong>How we earn.</strong> Free GST Billing is made by AmanNegi, a small software company in India. We earn from paid work for businesses that want it (custom features, setup and moving data in, support plans) and from people who choose to support the project. See <a href="support.html">Support &amp; About</a>.</li>
   <li><strong>Tracking you would gain us nothing.</strong> We do not sell ads or data, so there is nothing to collect. Collecting your data would also break the one promise the app is built on.</li>
   <li><strong>The code is public</strong>, so this can be checked, not just believed.</li>
 </ul>
@@ -175,7 +175,7 @@ export default [
 <section id="what-you-should-do">
 <h2>What you should do</h2>
 <ul>
-  <li><strong>Download only from the official places</strong>: this project's <a href="${SITE.repo}">GitHub page</a> or the install line on these pages (<code>dicecodes.com</code>). Copies on other websites, on YouTube links or forwarded on WhatsApp are not ours and may have been changed.</li>
+  <li><strong>Download only from the official places</strong>: this project's <a href="${SITE.repo}">GitHub page</a> or the install line on these pages (<code>AmanNegi.com</code>). Copies on other websites, on YouTube links or forwarded on WhatsApp are not ours and may have been changed.</li>
   <li><strong>Keep Windows or macOS up to date</strong>, and keep its built-in antivirus on.</li>
   <li><strong>Put a password on your computer account</strong>, and turn on the app's PIN lock if others use the same PC.</li>
   <li><strong>Keep a backup copy on another drive</strong> or a USB disk (see <a href="backup.html#backup-copy">Keeping a copy somewhere else</a>).</li>
@@ -188,7 +188,7 @@ export default [
 <p>Please report it privately, not in a public issue, so it can be fixed before anyone misuses it:</p>
 <ul>
   <li><strong>GitHub private report</strong> (preferred): the <a href="${SITE.repo}/security/advisories/new">Report a vulnerability</a> button on the project's Security tab.</li>
-  <li><strong>Email</strong>: Contact@dicecodes.com with <code>SECURITY</code> in the subject.</li>
+  <li><strong>Email</strong>: Contact@AmanNegi.com with <code>SECURITY</code> in the subject.</li>
 </ul>
 <p>Use made-up data when you describe it, never real invoices or GSTINs. The full policy is in <a href="${SITE.repo}/blob/main/SECURITY.md">SECURITY.md</a>.</p>
 </section>

@@ -16,8 +16,8 @@ function eq(actual, expected, label) {
   else { failed++; console.log(`  FAIL ${label}\n     expected: ${JSON.stringify(expected)}\n     actual:   ${JSON.stringify(actual)}`); }
 }
 
-// The demo business only: DiceCodes, Karnataka.
-const profile = { businessName: 'DiceCodes', country: 'India', state: 'Karnataka', gstin: '29ABCDE1234F1ZW' };
+// The demo business only: AmanNegi, Karnataka.
+const profile = { businessName: 'AmanNegi', country: 'India', state: 'Karnataka', gstin: '29ABCDE1234F1ZW' };
 const usClient = { name: 'Acme Inc', country: 'United States' };
 const items = [{ id: '1', name: 'Design work', hsn: '998391', quantity: 10, unit: 'Hrs', rate: 50, discount: 20, taxPercent: 18 }];
 const usdBill = (invoiceOptions = {}) => {

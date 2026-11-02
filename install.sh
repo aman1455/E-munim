@@ -181,7 +181,7 @@ make_mac_app() {
 <plist version="1.0"><dict>
 <key>CFBundleName</key><string>Free GST Billing</string>
 <key>CFBundleDisplayName</key><string>Free GST Billing</string>
-<key>CFBundleIdentifier</key><string>com.dicecodes.freegstbilling</string>
+<key>CFBundleIdentifier</key><string>com.AmanNegi.freegstbilling</string>
 <key>CFBundleExecutable</key><string>launch</string>
 <key>CFBundlePackageType</key><string>APPL</string>
 <key>CFBundleShortVersionString</key><string>$VERSION</string>
@@ -197,7 +197,7 @@ PLIST
 }
 
 autostart_file() {
-  if [ "$OS" = Darwin ]; then printf '%s\n' "$HOME/Library/LaunchAgents/com.dicecodes.freegstbilling.plist"
+  if [ "$OS" = Darwin ]; then printf '%s\n' "$HOME/Library/LaunchAgents/com.AmanNegi.freegstbilling.plist"
   else printf '%s\n' "${XDG_CONFIG_HOME:-$HOME/.config}/autostart/free-gst-billing.desktop"; fi
 }
 menu_file() { printf '%s\n' "${XDG_DATA_HOME:-$HOME/.local/share}/applications/free-gst-billing.desktop"; }
@@ -225,7 +225,7 @@ add_autostart() {
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict>
-<key>Label</key><string>com.dicecodes.freegstbilling</string>
+<key>Label</key><string>com.AmanNegi.freegstbilling</string>
 <key>ProgramArguments</key><array><string>/bin/sh</string><string>$SYS/open-app.sh</string></array>
 <key>RunAtLoad</key><true/>
 </dict></plist>
@@ -245,7 +245,7 @@ install_app() {
 
   # --- [1/4] ---------------------------------------------------------------
   step '[1/4] Checking this computer'
-  case "$OS" in Darwin | Linux) ;; *) fail "This computer ($OS) is not supported by this installer." 'Use the ZIP download instead: https://dicecodes.com/free-gst-software-documentation/install.html' ;; esac
+  case "$OS" in Darwin | Linux) ;; *) fail "This computer ($OS) is not supported by this installer." 'Use the ZIP download instead: https://AmanNegi.com/free-gst-software-documentation/install.html' ;; esac
   if ! command -v curl >/dev/null 2>&1 && ! command -v wget >/dev/null 2>&1; then
     fail 'Neither curl nor wget is installed.' 'Install curl (Debian / Ubuntu: sudo apt install curl), then run the install line again.'
   fi

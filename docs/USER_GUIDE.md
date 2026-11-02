@@ -452,4 +452,4 @@ PRs welcome. The project follows
 ## Need help?
 
 - File an issue: <https://github.com/aman1455/gst-billing-desktop/issues>
-- Email DiceCodes: contact@dicecodes.com
+- Email AmanNegi: contact@AmanNegi.com

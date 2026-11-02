@@ -829,9 +829,9 @@ console.log('\n[V77] #86 choosing Unpaid takes back the "Paid" payment');
 
 console.log('\n[V77] #84 duplicate business profiles, terms line breaks');
 {
-  const saved = [{ id: 'a', businessName: 'Anant Exports', gstin: '09AABCU9355J1ZS' }, { id: 'b', businessName: 'DiceCodes', gstin: '' }];
+  const saved = [{ id: 'a', businessName: 'Anant Exports', gstin: '09AABCU9355J1ZS' }, { id: 'b', businessName: 'AmanNegi', gstin: '' }];
   eq(findSameBusiness(saved, { businessName: 'ANANT EXPORTS PVT', gstin: '09aabcu9355j1zs' })?.id, 'a', 'Same GSTIN under another spelling is the same business');
-  eq(findSameBusiness(saved, { businessName: '  dicecodes ', gstin: '' })?.id, 'b', 'No GSTIN: the same name (case and spaces ignored)');
+  eq(findSameBusiness(saved, { businessName: '  AmanNegi ', gstin: '' })?.id, 'b', 'No GSTIN: the same name (case and spaces ignored)');
   eq(findSameBusiness(saved, { businessName: 'Anant Exports', gstin: '27AAAAA0000A1Z5' }), null, 'Same name but a different GSTIN is a different business');
   eq(findSameBusiness(saved, { businessName: 'Anant Exports', gstin: '' }), null, 'No GSTIN never overwrites a saved profile that has one');
   eq(findSameBusiness(saved, { businessName: 'Anant Exports', gstin: '09AABCU9355J1ZT' }, saved[0])?.id, 'a', 'Loaded profile with a corrected GSTIN typo: that profile is updated');
@@ -910,19 +910,19 @@ console.log('\n[V79] #96 quantities, #95 places of supply and per-business numbe
   eq([fmt({}, 'INV', 7), fmt({ ...brand, showFinYear: false }, 'INV', 7), fmt(brand, 'RPT', 3, { explicitPrefix: true })],
     ['INV/2026-27/0007', 'ACME/0007', 'RPT/2026-27/0003'], 'No brand: type prefix; no FY; a Print Settings per-type prefix is used as is');
 
-  const dicecodes = { businessName: 'DiceCodes', gstin: '29abcde1234f1zw' };
+  const AmanNegi = { businessName: 'AmanNegi', gstin: '29abcde1234f1zw' };
   const anant = { businessName: '  Anant  Exports ', gstin: '' };
-  eq([businessKeyOf(dicecodes), businessKeyOf(anant), businessKeyOf(null)], ['29ABCDE1234F1ZW', 'NAME:anant exports', ''], 'A business is known by its GSTIN, else its name');
+  eq([businessKeyOf(AmanNegi), businessKeyOf(anant), businessKeyOf(null)], ['29ABCDE1234F1ZW', 'NAME:anant exports', ''], 'A business is known by its GSTIN, else its name');
   const shared = { brandPrefix: '', startNumber: 1 };
   const map = { [businessKeyOf(anant)]: { brandPrefix: 'AE', startNumber: 502 } };
-  const a = numberSeriesFor(shared, map, businessKeyOf(dicecodes));
+  const a = numberSeriesFor(shared, map, businessKeyOf(AmanNegi));
   const b = numberSeriesFor(shared, map, businessKeyOf(anant));
   eq([a.own, b.own, b.brandPrefix, b.startNumber, b.separator], [false, true, 'AE', 502, '/'], 'A business without its own numbering uses the shared one; one with it uses its own');
-  eq([counterKeyFor('INV', a, businessKeyOf(dicecodes)), counterKeyFor('INV', b, businessKeyOf(anant))], ['counter_INV', 'counter_INV@NAME:anant exports'], 'Each own series has its own counters');
+  eq([counterKeyFor('INV', a, businessKeyOf(AmanNegi)), counterKeyFor('INV', b, businessKeyOf(anant))], ['counter_INV', 'counter_INV@NAME:anant exports'], 'Each own series has its own counters');
   eq([fmt(a, 'INV', nextCounterValue(1225, startFor('tax-invoice', a))), fmt(b, 'INV', nextCounterValue(undefined, startFor('tax-invoice', b)))],
     ['INV/2026-27/1226', 'AE/2026-27/0502'], '#95: firm A continues at 1226, firm B starts its own series at 0502');
 
-  const ctx = { shared: { brandPrefix: 'ACME' }, seriesMap: map, businessKey: businessKeyOf(dicecodes), customPrefixes: { 'tax-invoice': 'RPT' } };
+  const ctx = { shared: { brandPrefix: 'ACME' }, seriesMap: map, businessKey: businessKeyOf(AmanNegi), customPrefixes: { 'tax-invoice': 'RPT' } };
   eq([!!ownPrefixProblem('', ctx), !!ownPrefixProblem('inv', ctx), !!ownPrefixProblem('ACME', ctx), !!ownPrefixProblem('AE', ctx), !!ownPrefixProblem('RPT', ctx), ownPrefixProblem('KS', ctx)],
     [true, true, true, true, true, ''], 'An own prefix must be set and unlike any other series (type prefixes, shared, other businesses, Print Settings)');
   eq(ownPrefixProblem('AE', { ...ctx, businessKey: businessKeyOf(anant) }), '', 'A business may keep its own prefix when it saves again');

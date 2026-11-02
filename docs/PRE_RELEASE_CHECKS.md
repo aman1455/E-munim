@@ -61,7 +61,7 @@ npm run release:check    # everything below marked [auto]
 - [ ] If the updater itself was broken: the manual-download warning at the top.
 - [ ] Docs pages updated for every changed screen (`docs-site/pages/`), and **READ ME FIRST.txt, README and the docs troubleshooting page say the same** for any new error message.
 - [ ] Every button and menu name in the text **checked against the code** (grep the label).
-- [ ] No real customer data, GSTIN, bank details or phone numbers in screenshots or text; use the demo business name **DiceCodes** (fake GSTIN 29ABCDE1234F1ZW, hello@dicecodes.example), never an invented shop name.
+- [ ] No real customer data, GSTIN, bank details or phone numbers in screenshots or text; use the demo business name **AmanNegi** (fake GSTIN 29ABCDE1234F1ZW, hello@AmanNegi.example), never an invented shop name.
 
 ## 6. Publish
 
@@ -70,7 +70,7 @@ npm run release:check    # everything below marked [auto]
 - [ ] `gh release create v<ver>` with **one** file named **`Free-GST-Billing.zip`**, and the notes.
 - [ ] Swap the v1.10.44 asset to the new ZIP.
 - [ ] `gh api repos/aman1455/gst-billing-desktop/releases/latest` shows the new tag and one asset; the README download link returns 200.
-- [ ] Upload the docs ZIP to dicecodes.com, extract it, and **open the live docs** and click three links (it must say the new version).
+- [ ] Upload the docs ZIP to AmanNegi.com, extract it, and **open the live docs** and click three links (it must say the new version).
 
 ## 7. After
 

@@ -107,7 +107,7 @@ const ICO_OUT = path.join(ROOT, 'release-templates', '_system-scripts', 'app-ico
 const SIMPLE_SVG = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" rx="13" fill="#2563eb"/>
   <text x="32" y="47" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif"
-        font-weight="700" font-size="44" fill="#fff">B</text>
+        font-weight="700" font-size="24" fill="#fff">EM</text>
 </svg>`);
 
 // An uncompressed icon image: a BITMAPINFOHEADER whose height is doubled
@@ -171,5 +171,8 @@ for (const { size, buf } of images) {
 
 const ico = Buffer.concat([header, ...entries, ...images.map((i) => i.buf)]);
 fs.writeFileSync(ICO_OUT, ico);
+const BUILD_DIR = path.join(ROOT, "build");
+if (!fs.existsSync(BUILD_DIR)) fs.mkdirSync(BUILD_DIR, { recursive: true });
+fs.writeFileSync(path.join(BUILD_DIR, "icon.ico"), ico);
 console.log(`Wrote ${path.relative(ROOT, ICO_OUT)} (${images.map((i) => i.size).join(', ')} px, ${(ico.length / 1024).toFixed(1)} KB)`);
 

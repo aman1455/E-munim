@@ -1089,7 +1089,7 @@ function App() {
           <SupportView />
         )}
         </Suspense>
-        {/* Version + DiceCodes line: Dashboard only, so it never takes space on working screens. */}
+        {/* Version + AmanNegi line: Dashboard only, so it never takes space on working screens. */}
         {currentView === 'dashboard' && <AppFooter onOpenSupport={() => setCurrentView('support')} />}
         </ErrorBoundary>
       </div>

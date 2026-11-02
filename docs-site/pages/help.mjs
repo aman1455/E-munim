@@ -20,7 +20,7 @@ export default [
   <li><a href="#support"><strong>Support &amp; About</strong></a>, <strong>Control Panel</strong> and <strong>Settings</strong>.</li>
   <li>A dot on <b>Control Panel</b>: green when the app is running, red when it is not (hover over it to read which).</li>
 </ul>
-<p>At the end of the Dashboard, below the invoices, a small line shows the app's version, a link to DiceCodes and <a href="#support">Support</a>. It is never printed.</p>
+<p>At the end of the Dashboard, below the invoices, a small line shows the app's version, a link to AmanNegi and <a href="#support">Support</a>. It is never printed.</p>
 <p>The ☰ button beside the app name shrinks the sidebar to a slim strip of icons and gives the page more room; it is highlighted while the menu hides itself. Point at the strip to open it. Click ☰ again to keep the menu open.</p>
 <p><b>At the top right of every screen</b> are small buttons: <b>?</b> opens this User Guide in your browser (it needs internet), the 🔔 bell opens <a href="#notifications">Notifications</a>, the Wi-Fi button turns <a href="security.html#offline-mode">Offline mode</a> on or off and shows what it changes (it turns orange, with a line through it, while Offline mode is on), the moon or sun switches <a href="#dark-mode">dark mode</a>, and, when a <a href="settings.html#lock">PIN</a> is set, the padlock locks the app. On a phone they sit in the bar at the top, beside the ☰ menu button. You can hide or reorder them in <a href="settings.html#features-menu">Settings → Features</a>.</p>
 <p>On a narrow screen, the sidebar folds away behind the ☰ menu button.</p>
@@ -29,9 +29,9 @@ export default [
 
 <section id="support">
 <h2>Support &amp; About</h2>
-<p>Who makes the app, and how to help it grow. Free ways come first: star it on GitHub, tell another business, report a bug or ask for a feature. If you want to give money, scan the UPI QR with any UPI app, for any amount. The page also lists what DiceCodes builds for businesses: custom software and web apps, changes to this app, setup and data migration, support plans, AI integration and automation, and mobile apps.</p>
+<p>Who makes the app, and how to help it grow. Free ways come first: star it on GitHub, tell another business, report a bug or ask for a feature. If you want to give money, scan the UPI QR with any UPI app, for any amount. The page also lists what AmanNegi builds for businesses: custom software and web apps, changes to this app, setup and data migration, support plans, AI integration and automation, and mobile apps.</p>
 <p>The app stays free whatever you choose. Nothing is locked, and nothing is ever printed on your invoices. Once you have made 10 invoices, the Dashboard shows a small <a href="dashboard.html#support-card">support card</a> once a day; ${ui('Not today')} hides it until tomorrow and ${ui('Hide for 30 days')} for a month.</p>
-<p>Scanning the QR fills in the payment note "Free GST Billing support - <i>your business name</i>", so DiceCodes can thank you; untick <b>Include my business name</b> to leave it out. The page also shows how much users have given so far and what it is going towards.</p>
+<p>Scanning the QR fills in the payment note "Free GST Billing support - <i>your business name</i>", so AmanNegi can thank you; untick <b>Include my business name</b> to leave it out. The page also shows how much users have given so far and what it is going towards.</p>
 <p>Once a month at most, a one-line note at the top of the app asks for a star on GitHub. ${ui('✕')} hides it for 30 days; ${ui('Star on GitHub')} or ${ui('Already starred')} hides it for good. It never appears while you are making an invoice.</p>
 </section>
 
@@ -625,7 +625,7 @@ export default [
 
 <section id="copy-details">
 <h3>Sending the details another way</h3>
-<p>No GitHub account? Click ${ui('Copy details')} (or ${ui('Copy')} in the Problem log), paste it into an email to <a href="mailto:contact@dicecodes.com">contact@dicecodes.com</a> or a WhatsApp message, and add what you did just before it happened. Read it before sending; it is plain text.</p>
+<p>No GitHub account? Click ${ui('Copy details')} (or ${ui('Copy')} in the Problem log), paste it into an email to <a href="mailto:contact@AmanNegi.com">contact@AmanNegi.com</a> or a WhatsApp message, and add what you did just before it happened. Read it before sending; it is plain text.</p>
 </section>
 
 <section id="questions">

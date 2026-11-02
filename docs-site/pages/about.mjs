@@ -5,7 +5,7 @@ import { SITE } from '../site.mjs';
 
 const ui = (s) => `<span class="ui">${s}</span>`;
 const UPI_ID = 'princeramgarhiaa-1@okaxis';
-const upi = (amount) => `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=DiceCodes&cu=INR`
+const upi = (amount) => `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=AmanNegi&cu=INR`
   + `&tn=${encodeURIComponent('Free GST Billing support')}${amount ? `&am=${amount}.00` : ''}`;
 // Drawn at build time: the page needs no script, and the QR works offline once saved.
 const qrSvg = await QRCode.toString(upi(0), { type: 'svg', margin: 1, errorCorrectionLevel: 'M' });
@@ -26,11 +26,11 @@ export default [
   slug: 'support',
   title: 'Support & About',
   nav: 'Support & About',
-  lead: 'Who makes Free GST Billing, how you can help it grow, and what DiceCodes builds for businesses.',
+  lead: 'Who makes Free GST Billing, how you can help it grow, and what AmanNegi builds for businesses.',
   body: `
 <section id="about">
 <h2>Free, and it stays free</h2>
-<p>Free GST Billing is built and maintained by <a href="${SITE.publisher.url}">DiceCodes</a> in India. No ads, no account, no locked features, and your invoices never leave your computer. The full source code is on <a href="${SITE.repo}">GitHub</a> under the MIT licence.</p>
+<p>Free GST Billing is built and maintained by <a href="${SITE.publisher.url}">AmanNegi</a> in India. No ads, no account, no locked features, and your invoices never leave your computer. The full source code is on <a href="${SITE.repo}">GitHub</a> under the MIT licence.</p>
 <p>After the ways to support, <b>Safe and private</b> lists what happens to your data: it stays on this computer, no account, works offline, no tracking, other computers cannot open it, open source, a safe install, daily backups, the PIN lock, problem reports, security fixes, and your part. Each point opens its part of <a href="security.html">Is it safe? Security and privacy</a>.</p>
 <p>If it saves you time every month, you can help keep the fixes and new features coming.</p>
 </section>
@@ -39,7 +39,7 @@ export default [
 <h2>Support with UPI</h2>
 <p>Scan with GPay, PhonePe, Paytm or any UPI app. Any amount helps.</p>
 <div class="upi-box">
-  <div class="upi-qr" role="img" aria-label="UPI QR code to pay DiceCodes">${qrSvg}</div>
+  <div class="upi-qr" role="img" aria-label="UPI QR code to pay AmanNegi">${qrSvg}</div>
   <div class="upi-text">
     <p class="upi-label">UPI ID</p>
     <p class="upi-id"><code>${UPI_ID}</code></p>
@@ -47,17 +47,17 @@ export default [
       <a href="${upi(200)}">₹200</a> <a href="${upi(500)}">₹500</a> <a href="${upi(1000)}">₹1,000</a> <a href="${upi(0)}">Any amount</a></p>
   </div>
 </div>
-<p>The payment note says "Free GST Billing support". Paying from the app's Support &amp; About page adds your business name to it, so DiceCodes can thank you.</p>
+<p>The payment note says "Free GST Billing support". Paying from the app's Support &amp; About page adds your business name to it, so AmanNegi can thank you.</p>
 
 <h3>The Support with UPI card in the app</h3>
 <p>Giving money is completely optional. Nothing in the app is locked, and nothing is ever printed on your invoices, whatever you choose. The QR code is drawn inside the app, so the card works even without internet.</p>
 <div class="table-wrap"><table>
   <tr><th>On the card</th><th>What it does</th></tr>
   <tr><td>${ui('₹200')} ${ui('₹500')} ${ui('₹1000')} ${ui('Any amount')}</td><td>Picks the amount the QR code asks for. <b>Any amount</b> leaves it blank so you type it in your UPI app.</td></tr>
-  <tr><td>The QR code</td><td>Scan it with GPay, PhonePe, Paytm, BHIM or your bank's app. The payee is <b>DiceCodes</b>.</td></tr>
+  <tr><td>The QR code</td><td>Scan it with GPay, PhonePe, Paytm, BHIM or your bank's app. The payee is <b>AmanNegi</b>.</td></tr>
   <tr><td><b>UPI ID</b> and ${ui('Copy UPI ID')}</td><td>To pay from a phone that cannot scan this screen: copy the ID and paste it in your UPI app as "Pay to UPI ID". It shows <b>Copied</b> for two seconds.</td></tr>
   <tr><td><b>Payment note</b></td><td>The note your UPI app fills in: "Free GST Billing support", plus your business name from Settings.</td></tr>
-  <tr><td><b>Include my business name, so DiceCodes can thank you</b></td><td>Shown when your business name is saved. Untick it to pay without your name in the note.</td></tr>
+  <tr><td><b>Include my business name, so AmanNegi can thank you</b></td><td>Shown when your business name is saved. Untick it to pay without your name in the note.</td></tr>
 </table></div>
 <ol class="steps">
   <li><strong>Open Support &amp; About</strong>Near the bottom of the sidebar.</li>
@@ -132,13 +132,13 @@ export default [
 </section>
 
 <section id="services">
-<h2>Work with DiceCodes</h2>
+<h2>Work with AmanNegi</h2>
 <p>The team behind this app builds software for businesses too.</p>
 <div class="service-grid">
 ${SERVICES.map(([t, d]) => `  <div class="service"><strong>${t}</strong><span>${d}</span></div>`).join('\n')}
 </div>
-<p>Email <a href="mailto:contact@dicecodes.com?subject=${encodeURIComponent('Project enquiry (from the Free GST Billing docs)')}">contact@dicecodes.com</a> or visit <a href="${SITE.publisher.url}">dicecodes.com</a>.</p>
-<p>In the app, ${ui('Email contact@dicecodes.com')} opens your email program with the subject "Project enquiry (from Free GST Billing)" filled in; say what you need and roughly when. ${ui('dicecodes.com')} opens the website. This is paid work and separate from the free app: the app stays free whether or not you hire us. For a problem with the app itself, use <a href="troubleshooting.html#report-problem">Reporting a problem</a> instead.</p>
+<p>Email <a href="mailto:contact@AmanNegi.com?subject=${encodeURIComponent('Project enquiry (from the Free GST Billing docs)')}">contact@AmanNegi.com</a> or visit <a href="${SITE.publisher.url}">AmanNegi.com</a>.</p>
+<p>In the app, ${ui('Email contact@AmanNegi.com')} opens your email program with the subject "Project enquiry (from Free GST Billing)" filled in; say what you need and roughly when. ${ui('AmanNegi.com')} opens the website. This is paid work and separate from the free app: the app stays free whether or not you hire us. For a problem with the app itself, use <a href="troubleshooting.html#report-problem">Reporting a problem</a> instead.</p>
 </section>
 
 <section id="in-the-app">
@@ -150,7 +150,7 @@ ${SERVICES.map(([t, d]) => `  <div class="service"><strong>${t}</strong><span>${
   <li><a href="#supporters-card">Received so far</a>, with the supporters list</li>
   <li><a href="#weekly">A new update every Saturday</a> and <a href="#whats-new">What's new</a></li>
   <li><a href="troubleshooting.html#problem-log">Problem log</a></li>
-  <li><a href="#services">Work with DiceCodes</a></li>
+  <li><a href="#services">Work with AmanNegi</a></li>
 </ul>
 <p>See <a href="shortcuts.html#support">Getting around</a> for the thank-you card and the GitHub star note.</p>
 </section>

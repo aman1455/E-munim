@@ -27,7 +27,7 @@ read_port() {
 read_port
 
 problem() {
-  msg="Free GST Billing could not start: $1 To repair it, run the install line again (https://dicecodes.com/free-gst-software-documentation/install.html)."
+  msg="Free GST Billing could not start: $1 To repair it, run the install line again (https://AmanNegi.com/free-gst-software-documentation/install.html)."
   if [ "$(uname -s)" = Darwin ] && [ -z "${FREEGSTBILL_TEST:-}" ]; then
     osascript -e "display alert \"Free GST Billing\" message \"$msg\"" >/dev/null 2>&1
   fi

@@ -46,7 +46,7 @@ const SAFETY = [
   { icon: KeyRound, title: 'Optional PIN lock', text: 'On a shared computer, lock the app with a PIN. It is stored only as a scrambled check value, never as the digits.', doc: 'security#backups-and-lock' },
   { icon: Bug, title: 'Problem reports only when you click', text: 'Errors are noted on this computer. A report opens only when you click Report, with GSTIN, phone, bank and other private details removed first.', doc: 'security#problem-reports' },
   { icon: RefreshCw, title: 'Security fixes in updates', text: 'A new version most Saturdays, urgent fixes sooner. GitHub security alerts watch the code libraries the app uses.', doc: 'security#updates-and-security-fixes' },
-  { icon: ListChecks, title: 'Check it yourself', text: 'Switch your internet off and use the app: everything works. Download only from GitHub or dicecodes.com, and keep a backup on another drive.', doc: 'security#check-yourself' },
+  { icon: ListChecks, title: 'Check it yourself', text: 'Switch your internet off and use the app: everything works. Download only from GitHub or AmanNegi.com, and keep a backup on another drive.', doc: 'security#check-yourself' },
 ];
 
 export function SafePrivateSection({ style }) {

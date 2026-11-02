@@ -403,7 +403,7 @@ ${order.map((slug) => `  <url><loc>${pageUrl(slug)}</loc><lastmod>${TODAY}</last
 </urlset>
 `);
 // Search engines only read robots.txt at the root of the domain. This copy is
-// a ready-made block to add to https://dicecodes.com/robots.txt.
+// a ready-made block to add to https://AmanNegi.com/robots.txt.
 writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}sitemap.xml\n`);
 writeFileSync(join(OUT, 'llms.txt'), llmsTxt());
 writeFileSync(join(OUT, 'llms-full.txt'), llmsFullTxt());

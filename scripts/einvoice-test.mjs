@@ -20,7 +20,7 @@ const P = (n) => Math.round(n * 100);
 
 // A GSTIN with a correct check digit (fake businesses, never real ones).
 const gstin = (first14) => first14 + '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').find((c) => gstinChecksumOk(first14 + c));
-const SELLER = { businessName: 'DiceCodes', gstin: '29ABCDE1234F1ZW', address: '12 MG Road', city: 'Bengaluru', pin: '560001', state: 'Karnataka', country: 'India', phone: '+91 98450 12345', email: 'accounts@dicecodes.example' };
+const SELLER = { businessName: 'AmanNegi', gstin: '29ABCDE1234F1ZW', address: '12 MG Road', city: 'Bengaluru', pin: '560001', state: 'Karnataka', country: 'India', phone: '+91 98450 12345', email: 'accounts@AmanNegi.example' };
 const KA_BUYER = { name: 'Lotus Traders', gstin: gstin('29AAACL1234K1Z'), address: '4 Brigade Road', city: 'Bengaluru', pin: '560025', state: 'Karnataka' };
 const MH_BUYER = { name: 'Sahyadri Books', gstin: gstin('27AAFCS5678M1Z'), address: '9 FC Road', city: 'Pune', pin: '411004', state: 'Maharashtra' };
 
@@ -169,7 +169,7 @@ console.log('\n[#111] Validation in plain English');
   eq(errs(makeBill({ items: good, client: { name: 'Walk-in customer', state: 'Karnataka' } })), ['The client has no GSTIN. E-invoices are only for sales to GST-registered businesses and exports; a sale to a consumer (B2C) needs none.'], 'B2C invoice is refused, with that one reason');
   eq(errs(makeBill({ items: [{ ...good[0], hsn: '' }] })), ['Item 1 (Gel pens): the HSN/SAC code is missing.'], 'missing HSN');
   eq(errs(makeBill({ items: [{ ...good[0], hsn: '96081' }] })), ['Item 1 (Gel pens): the HSN/SAC code "96081" must be 4, 6 or 8 digits.'], 'HSN of 5 digits');
-  eq(errs(makeBill({ items: good, no: 'DICECODES/2026-27/00001' })), ['The invoice number "DICECODES/2026-27/00001" is longer than 16 characters. The portal takes 16 at most.'], 'invoice number over 16 characters');
+  eq(errs(makeBill({ items: good, no: 'AmanNegi/2026-27/00001' })), ['The invoice number "AmanNegi/2026-27/00001" is longer than 16 characters. The portal takes 16 at most.'], 'invoice number over 16 characters');
   eq(errs(makeBill({ items: good, no: 'INV 7' })), ['The invoice number "INV 7" may only have letters, digits, / and -.'], 'space in invoice number');
   eq(errs(makeBill({ items: good, client: { ...KA_BUYER, pin: '', address: '4 Brigade Road' } })), ["The client's PIN code is missing."], 'buyer PIN missing');
   const noPin = makeBill({ items: good });

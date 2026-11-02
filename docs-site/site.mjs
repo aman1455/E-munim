@@ -8,7 +8,7 @@ export const SITE = {
   // Where the folder is published. Used for canonical links, the sitemap,
   // social previews and llms.txt, which all need full addresses.
   url: 'https://freeinvoicefast.com/docs/',
-  publisher: { name: 'DiceCodes', url: 'https://dicecodes.com' },
+  publisher: { name: 'AmanNegi', url: 'https://AmanNegi.com' },
   version: '1.10.84',
   repo: 'https://github.com/aman1455/gst-billing-desktop',
   // Always the newest release: GitHub resolves this to the latest release's

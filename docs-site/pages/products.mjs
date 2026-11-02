@@ -231,7 +231,7 @@ Demo Printing service,Service,998912,Page,,5,18,,Sample service row - a service 
 
 <section id="mfg-example">
 <h3>Worked example</h3>
-<p>DiceCodes makes chairs. One chair takes 4 chair legs (₹50 each), 1 seat (₹300) and 0.2 kg screws (₹400 a kg), so the cost per unit is 4 × 50 + 300 + 0.2 × 400 = <b>₹580</b>. Stock before: 100 legs, 20 seats, 5 kg screws, 3 chairs.</p>
+<p>AmanNegi makes chairs. One chair takes 4 chair legs (₹50 each), 1 seat (₹300) and 0.2 kg screws (₹400 a kg), so the cost per unit is 4 × 50 + 300 + 0.2 × 400 = <b>₹580</b>. Stock before: 100 legs, 20 seats, 5 kg screws, 3 chairs.</p>
 <div class="table-wrap"><table>
   <tr><th>Make 10 chairs</th><th>Used</th><th>Stock after</th></tr>
   <tr><td>Chair leg</td><td>40</td><td>60</td></tr>

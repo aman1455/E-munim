@@ -249,7 +249,7 @@ export default [
 <p>${ui('Change Logo')}, ${ui('Change Signature')} and ${ui('Change Stamp')} pick a new picture; the red bin on a picture removes it (save to keep the change). Saving a logo or signature also ticks <b>Show logo</b> and <b>Show signature</b> for new invoices.</p>
 <p><b>Tips for good pictures.</b> Large photos are made smaller for you (to 1024 pixels on the longer side). For the signature and stamp, a PNG with a transparent background looks best, so the paper shows through; sign on white paper, photograph it in good light, and crop it close. A logo photo (PNG or JPG) is saved with a white background, so it prints cleanly on any printer.</p>
 <p>On a long invoice the signature and stamp always move to the next page together, never split.</p>
-<p><b>Your name and logo in the menu.</b> Tick <b>Show my business name and logo in the app's menu</b> under the logo, then save: the top of the menu shows your logo (or your first letter) and business name instead of "GST Billing". With several businesses, it shows the one that is open. "by DiceCodes" stays under it. New installs ask this during the first setup.</p>
+<p><b>Your name and logo in the menu.</b> Tick <b>Show my business name and logo in the app's menu</b> under the logo, then save: the top of the menu shows your logo (or your first letter) and business name instead of "GST Billing". With several businesses, it shows the one that is open. "by AmanNegi" stays under it. New installs ask this during the first setup.</p>
 <h3>Something wrong?</h3>
 <ul>
   <li><b>"Could not decode this image"</b>: often an iPhone photo in HEIC format. Share it as JPEG first, or set the iPhone camera to <i>Most Compatible</i>.</li>

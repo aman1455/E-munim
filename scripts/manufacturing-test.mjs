@@ -74,7 +74,7 @@ eq(shortages(rows).length, 0, 'Making 10 chairs: enough of everything');
 
 console.log('\n[#115] The entry that is saved');
 {
-  const owner = { gstin: '27AAAAA0000A1Z5', businessName: 'DiceCodes' };
+  const owner = { gstin: '27AAAAA0000A1Z5', businessName: 'AmanNegi' };
   const { entry } = buildProduction({ product: chair, qty: '10', date: '2026-10-20', note: ' Batch 1 ', products, owner, id: 'mfg_1' });
   eq([entry.qty, entry.cost, entry.note, entry.ownerGstin, entry.productName], [10, 5800, 'Batch 1', '27AAAAA0000A1Z5', 'Chair'], 'Qty, total cost, note, business and product are kept');
   eq(entry.stockApplied, stock, 'It keeps its own stock record');

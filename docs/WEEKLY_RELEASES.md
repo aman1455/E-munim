@@ -61,4 +61,4 @@ The app's Support & About page links straight to both forms.
       cd docs-site/out && tar -a -c -f ../../release-build/docs-v<version>.zip free-gst-software-documentation && cd ../..
       node scripts/check-zip-paths.mjs release-build/docs-v<version>.zip
       ```
-      then uploaded in place of `/free-gst-software-documentation/` on dicecodes.com
+      then uploaded in place of `/free-gst-software-documentation/` on AmanNegi.com

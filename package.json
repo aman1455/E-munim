@@ -2,7 +2,7 @@
   "name": "e-munim",
   "version": "1.10.84",
   "description": "E-Munim — Smart, fast, and modern GST invoice & billing software for India. Tax Invoice, Proforma, Credit Note, Bill of Supply, Delivery Challan, GSTR-1 / GSTR-3B JSON exports, GSTR-2B reconciliation, e-Way Bill, TDS / TCS reports, multi-currency support, custom units, and offline-first data privacy.",
-  "author": "DiceCodes <Contact@dicecodes.com>",
+  "author": "AmanNegi <Contact@AmanNegi.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -71,7 +71,7 @@
     "vite",
     "expressjs",
     "india",
-    "diceCodes"
+    "AmanNegi"
   ],
   "type": "module",
   "engines": {
@@ -134,18 +134,20 @@
   "main": "electron/main.cjs",
   "build": {
     "electronVersion": "45.1.0",
-    "appId": "com.dicecodes.freegstbilling",
-    "productName": "Free GST Billing Software",
+    "appId": "com.AmanNegi.emunim",
+    "productName": "E-Munim",
     "asar": false,
     "directories": {
-      "output": "release"
+      "output": "release",
+      "buildResources": "build"
     },
     "files": [
       "dist/**/*",
       "electron/**/*",
       "licensing/**/*",
       "server.js",
-      "src/utils.js",
+      "src/**/*",
+      "build/icon.ico",
       "release-templates/_system-scripts/app-icon.ico",
       "package.json"
     ],
@@ -166,7 +168,9 @@
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
-      "shortcutName": "Free GST Billing Software"
+      "shortcutName": "E-Munim",
+      "installerIcon": "release-templates/_system-scripts/app-icon.ico",
+      "uninstallerIcon": "release-templates/_system-scripts/app-icon.ico"
     }
   }
 }

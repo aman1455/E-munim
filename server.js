@@ -153,7 +153,7 @@ try {
   const why = err.code === 'ENOSPC' ? 'The disk is full. Free some space and open the app again.'
     : (err.code === 'EACCES' || err.code === 'EPERM') ? 'The app is not allowed to write to its data folder. Move the app folder to Documents (not Program Files), or allow it in your antivirus.'
       : `The data folder could not be created (${err.code || err.message}).`;
-  console.error(`\n  Free GST Billing cannot start: ${why}\n  Data folder: ${DATA_DIR}\n  Help: https://dicecodes.com/free-gst-software-documentation/troubleshooting.html#${err.code === 'ENOSPC' ? 'disk-full' : 'no-permission'}\n`);
+  console.error(`\n  Free GST Billing cannot start: ${why}\n  Data folder: ${DATA_DIR}\n  Help: https://AmanNegi.com/free-gst-software-documentation/troubleshooting.html#${err.code === 'ENOSPC' ? 'disk-full' : 'no-permission'}\n`);
   try { fs.appendFileSync(path.join(DATA_DIR, 'errors.log'), `[${new Date().toISOString()}] [startup] ${why} ${err.code || ''}\n`, 'utf-8'); } catch { /* the folder is the problem */ }
   process.exit(1);
 }
