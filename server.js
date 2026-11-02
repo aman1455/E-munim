@@ -1453,7 +1453,7 @@ app.get('/api/rules', async (req, res) => {
             writeJSON(META_PATH, meta);
           }
         }
-      } catch {}
+      } catch { /* ignore network error */ }
     }
     const meta = readJSON(META_PATH, {});
     res.json({

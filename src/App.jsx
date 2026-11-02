@@ -155,7 +155,7 @@ function App() {
         const rulesRes = await fetch('/api/rules');
         const rulesData = await rulesRes.json();
         if (rulesData?.rules) setActiveRules(rulesData.rules);
-      } catch {}
+      } catch { /* offline — quietly skip */ }
     };
     // First check ~5 seconds after mount so it doesn't fight the initial load.
     const initial = setTimeout(check, 5000);

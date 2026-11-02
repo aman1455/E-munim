@@ -20,7 +20,7 @@ function getStorageItem(key) {
 
 function setStorageItem(key, val) {
   if (typeof localStorage !== 'undefined') {
-    try { localStorage.setItem(key, val); } catch {}
+    try { localStorage.setItem(key, val); } catch { /* ignore */ }
   }
 }
 
@@ -64,7 +64,7 @@ export function setActiveRules(rules) {
   if (typeof window !== 'undefined' && typeof window.dispatchEvent === 'function') {
     try {
       window.dispatchEvent(new CustomEvent('gst-remote-rules-updated', { detail: rules }));
-    } catch {}
+    } catch { /* ignore */ }
   }
 }
 

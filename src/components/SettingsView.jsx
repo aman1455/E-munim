@@ -26,7 +26,7 @@ import SignatureImages, { SIGN_LAYOUTS } from './SignatureImages';
 
 import { PURPOSE_CODES } from '../utils/purposeCodes';
 
-import { getBackupsList, restoreBackup, triggerBackup, deleteBackup, getTrashedBills, restoreTrashedBill, purgeTrashedBill, runUpdateNow, saveBill, applyStockChanges, getBackupFolder, setBackupFolder, syncRemoteRules, getRemoteRules } from '../store';
+import { getBackupsList, restoreBackup, triggerBackup, deleteBackup, getTrashedBills, restoreTrashedBill, purgeTrashedBill, runUpdateNow, saveBill, applyStockChanges, getBackupFolder, setBackupFolder, syncRemoteRules } from '../store';
 import { setActiveRules, getActiveRules } from '../utils/remoteRules';
 
 // v1.10.36 — Section order for the jump-nav pill bar. Keeping this at
