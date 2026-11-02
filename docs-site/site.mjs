@@ -10,10 +10,10 @@ export const SITE = {
   url: 'https://freeinvoicefast.com/docs/',
   publisher: { name: 'AmanNegi', url: 'https://AmanNegi.com' },
   version: '1.10.84',
-  repo: 'https://github.com/aman1455/gst-billing-desktop',
+  repo: 'https://github.com/aman1455/E-munim',
   // Always the newest release: GitHub resolves this to the latest release's
   // file of exactly this name (see docs/RELEASE_CHECKLIST.md, step 4b).
-  download: 'https://github.com/aman1455/gst-billing-desktop/releases/latest/download/Free-GST-Billing.zip',
+  download: 'https://github.com/aman1455/E-munim/releases/latest/download/Free-GST-Billing.zip',
 };
 
 // Search-result titles and descriptions for the pages people search for most.

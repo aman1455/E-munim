@@ -1086,7 +1086,7 @@ function SummaryTab({ bills, expenses, purchases, profile, comparison, inputs, p
         </div>
       </div>
 
-      <div className="glass-panel p-4" style={{ marginTop: '1rem', background: 'linear-gradient(135deg, rgba(30,64,175,0.05) 0%, rgba(5,150,105,0.05) 100%)', border: '1px solid var(--primary)' }}>
+      <div className="glass-panel p-4" style={{ marginTop: '1rem', background: 'var(--primary-light)', border: '1px solid var(--border)' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <h3 className="section-title" style={{ margin: 0, color: 'var(--primary)' }}>ITR-4 (Sugam) Filing Summary PDF<HelpButton title="ITR-4 (Sugam) Filing Summary PDF" doc="income-tax#itr4-pdf" size={16} /></h3>

@@ -10,7 +10,7 @@ import { SUPPORT_NUDGE_MIN_INVOICES } from '../utils/supporters';
 import HelpButton from './HelpButton';
 
 const KEY = 'freegstbill_welcomeCard';
-const SHARE_TEXT = 'I use E-Munim for my GST invoices. It works offline and keeps data on your own PC: https://github.com/aman1455/gst-billing-desktop';
+const SHARE_TEXT = 'I use E-Munim for my GST invoices. It works offline and keeps data on your own PC: https://github.com/aman1455/E-munim';
 
 const isClosed = () => { try { return localStorage.getItem(KEY) === 'closed'; } catch { return false; } };
 

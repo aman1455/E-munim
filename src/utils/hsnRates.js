@@ -24,6 +24,8 @@
  * Lookup: the longest key (8 → 4 digits) that the typed code starts with.
  */
 
+import { resolveHsnOverride } from './remoteRules.js';
+
 export const HSN_RATES = {
   // ─── Food & grocery ─────────────────────────────────────────────
   '0401': { rate: 0,  label: 'Milk (fresh, pasteurised, UHT)' },
@@ -146,11 +148,18 @@ export const SAC_RATES = {
 /*
  * Resolve the table entry for an HSN / SAC code, or null.
  * Codes starting with 99 are looked up in SAC_RATES.
+ * Supports temporal overrides based on invoiceDate.
  */
-export function suggestGstRate(hsnOrSac) {
+export function suggestGstRate(hsnOrSac, invoiceDate = null) {
   if (!hsnOrSac) return null;
   const clean = String(hsnOrSac).replace(/\s+/g, '');
   if (!/^\d{4,8}$/.test(clean)) return null;
+
+  // 1. Dynamic remote statutory overrides checked first
+  const override = resolveHsnOverride(clean, invoiceDate);
+  if (override) return override;
+
+  // 2. Built-in static rates
   const table = clean.startsWith('99') ? SAC_RATES : HSN_RATES;
   for (let len = clean.length; len >= 4; len--) {
     const hit = table[clean.slice(0, len)];
@@ -160,8 +169,8 @@ export function suggestGstRate(hsnOrSac) {
 }
 
 // The rate to auto-fill, or null when the code has no single usual rate.
-export function autoFillRate(hsnOrSac) {
-  const s = suggestGstRate(hsnOrSac);
+export function autoFillRate(hsnOrSac, invoiceDate = null) {
+  const s = suggestGstRate(hsnOrSac, invoiceDate);
   return s && typeof s.rate === 'number' ? s.rate : null;
 }
 

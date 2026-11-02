@@ -26,7 +26,8 @@ import SignatureImages, { SIGN_LAYOUTS } from './SignatureImages';
 
 import { PURPOSE_CODES } from '../utils/purposeCodes';
 
-import { getBackupsList, restoreBackup, triggerBackup, deleteBackup, getTrashedBills, restoreTrashedBill, purgeTrashedBill, runUpdateNow, saveBill, applyStockChanges, getBackupFolder, setBackupFolder } from '../store';
+import { getBackupsList, restoreBackup, triggerBackup, deleteBackup, getTrashedBills, restoreTrashedBill, purgeTrashedBill, runUpdateNow, saveBill, applyStockChanges, getBackupFolder, setBackupFolder, syncRemoteRules, getRemoteRules } from '../store';
+import { setActiveRules, getActiveRules } from '../utils/remoteRules';
 
 // v1.10.36 — Section order for the jump-nav pill bar. Keeping this at
 // module scope so the scroll-spy effect below can reference it without
@@ -170,6 +171,25 @@ export default function SettingsView({ onSaved }) {
   // v1.10.69 - see runUpdateNow() in store.js: this used to be a link to a URL
   // protocol that no current install registers, so it did nothing at all.
   const [updatingNow, setUpdatingNow] = useState(false);
+  const [syncingRules, setSyncingRules] = useState(false);
+  const [rulesStatus, setRulesStatus] = useState(() => getActiveRules());
+
+  const handleSyncRules = async () => {
+    setSyncingRules(true);
+    try {
+      const res = await syncRemoteRules(true);
+      if (res?.success && res.rules) {
+        setActiveRules(res.rules);
+        setRulesStatus(res.rules);
+        toast(`Tax rules synced successfully (v${res.rules.version || 'latest'})!`, 'success');
+      } else {
+        toast(`Sync failed: ${res?.error || 'Unknown error'}`, 'warning');
+      }
+    } catch (err) {
+      toast(`Could not sync rules: ${err.message}`, 'error');
+    }
+    setSyncingRules(false);
+  };
   const handleSettingsUpdateNow = async () => {
     setUpdatingNow(true);
     toast('Updating… your data is backed up first. This takes about a minute.', 'info', 8000);
@@ -785,28 +805,14 @@ export default function SettingsView({ onSaved }) {
            card, gear glyph in a rounded badge for visual identity, and
            a subtle count chip showing how many sections there are so
            the user has a scale expectation before diving in. */}
-      <div className="page-header" style={{
-        padding: '1.1rem 1.35rem',
-        background: 'linear-gradient(135deg, rgba(var(--primary-rgb), 0.12), var(--card-bg))',
-        border: '1px solid var(--border)',
-        borderRadius: 12,
-        marginBottom: '1.25rem',
-      }}>
+      <div className="page-header">
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
-          <div style={{
-            width: 44, height: 44,
-            borderRadius: 12,
-            background: 'linear-gradient(135deg, var(--primary), var(--primary-darker))',
-            color: '#fff',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: '1.15rem',
-            boxShadow: '0 6px 18px rgba(var(--primary-rgb), 0.35)',
-          }}>⚙</div>
+          <div className="page-header-icon">⚙</div>
           <div style={{ flex: 1, minWidth: 0 }}>
             <h1 className="page-title" style={{ margin: 0 }}>Settings <HelpButton title="Settings" doc={SETTINGS_TAB_DOCS[activeSection] || 'settings'} size={16} /></h1>
             <p className="page-subtitle" style={{ margin: '0.15rem 0 0' }}>
               Business profile, branding, integrations & data
-              <span style={{ fontSize: '0.7rem', padding: '0.1rem 0.5rem', borderRadius: 999, background: 'var(--bg-secondary)', border: '1px solid var(--border)', marginLeft: '0.55rem', fontWeight: 600 }}>
+              <span className="page-header-meta" style={{ marginLeft: '0.55rem' }}>
                 {JUMP_NAV_SECTIONS.length} sections
               </span>
             </p>
@@ -851,29 +857,27 @@ export default function SettingsView({ onSaved }) {
                 }}
                 style={{
                   fontSize: '0.76rem',
-                  fontWeight: active ? 700 : 600,
-                  padding: '0.38rem 0.8rem',
+                  fontWeight: active ? 600 : 500,
+                  padding: '0.35rem 0.75rem',
                   borderRadius: 999,
-                  background: active
-                    ? 'linear-gradient(135deg, var(--primary), var(--primary-darker))'
-                    : 'var(--bg-secondary)',
-                  color: active ? '#fff' : 'var(--text)',
+                  background: active ? 'var(--primary)' : 'var(--card-bg)',
+                  color: active ? '#fff' : 'var(--text-secondary)',
                   textDecoration: 'none',
-                  border: active ? '1px solid transparent' : '1px solid var(--border)',
-                  transition: 'all 0.18s ease',
+                  border: active ? '1px solid var(--primary)' : '1px solid var(--border)',
+                  transition: 'all 0.15s ease',
                   whiteSpace: 'nowrap',
-                  boxShadow: active ? '0 4px 12px rgba(var(--primary-rgb), 0.4)' : 'none',
+                  boxShadow: active ? '0 1px 2px rgba(0, 0, 0, 0.08)' : 'none',
                 }}
                 onMouseEnter={(e) => {
                   if (!active) {
-                    e.currentTarget.style.background = 'var(--primary-light, rgba(30,64,175,0.08))';
-                    e.currentTarget.style.transform = 'translateY(-1px)';
+                    e.currentTarget.style.background = 'var(--bg-secondary)';
+                    e.currentTarget.style.color = 'var(--text-primary)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!active) {
-                    e.currentTarget.style.background = 'var(--bg-secondary)';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.background = 'var(--card-bg)';
+                    e.currentTarget.style.color = 'var(--text-secondary)';
                   }
                 }}>
                 {label}
@@ -965,18 +969,16 @@ export default function SettingsView({ onSaved }) {
                     onClick={() => setStockAlerts(prev => ({ ...prev, threshold: p.val }))}
                     title={p.hint}
                     style={{
-                      padding: '0.45rem 0.85rem',
+                      padding: '0.4rem 0.8rem',
                       borderRadius: 999,
-                      background: active
-                        ? 'linear-gradient(135deg, var(--primary), var(--primary-darker))'
-                        : 'var(--bg-secondary)',
-                      color: active ? '#fff' : 'var(--text)',
-                      border: active ? '1px solid transparent' : '1px solid var(--border)',
-                      fontSize: '0.85rem', fontWeight: 700,
+                      background: active ? 'var(--primary)' : 'var(--card-bg)',
+                      color: active ? '#fff' : 'var(--text-secondary)',
+                      border: active ? '1px solid var(--primary)' : '1px solid var(--border)',
+                      fontSize: '0.82rem', fontWeight: 600,
                       cursor: 'pointer',
                       transition: 'all 0.15s',
                       minWidth: 44,
-                      boxShadow: active ? '0 4px 10px rgba(var(--primary-rgb), 0.35)' : 'none',
+                      boxShadow: active ? '0 1px 2px rgba(0, 0, 0, 0.08)' : 'none',
                     }}>
                     {p.label}
                     <span style={{ display: 'block', fontSize: '0.6rem', fontWeight: 500, opacity: 0.85, marginTop: 1 }}>{p.hint}</span>
@@ -1782,6 +1784,21 @@ export default function SettingsView({ onSaved }) {
             </button>
           </div>
         )}
+        <hr style={{ margin: '1.25rem 0', borderColor: 'var(--border)' }} />
+        <h4 style={{ fontSize: '0.95rem', fontWeight: 600, marginBottom: '0.5rem' }}>Statutory & Tax Rules (Vercel Hub)</h4>
+        <p className="page-subtitle mb-3" style={{ fontSize: '0.85rem' }}>
+          Automatically syncs annual HSN overrides, tax rates, and Section 206C(1H) / 194Q rules from the online hub.
+        </p>
+        <div className="flex gap-4 items-center">
+          <button type="button" className="btn btn-secondary" disabled={syncingRules} onClick={handleSyncRules}>
+            <RefreshCw size={18} className={syncingRules ? 'spin' : ''} /> {syncingRules ? 'Syncing Rules...' : 'Sync Tax Rules Now'}
+          </button>
+          {rulesStatus && (
+            <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+              Active Version: {rulesStatus.version || 'Standard'} {rulesStatus.activeFinancialYear ? `(FY ${rulesStatus.activeFinancialYear})` : ''}
+            </span>
+          )}
+        </div>
       </div>
 
       <div id="section-data" className="glass-panel p-6 mb-6" style={{ order: 10 }}>

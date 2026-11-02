@@ -3,6 +3,7 @@ import { Home, FileText, Settings, Plus, Users, Package, BarChart3, Wallet, Refr
 import { getAllProfiles, saveProfile, getEnabledModules, getMenuOrder, onMenuChanged, getAllBills, getAllProducts, getStockAlertSettings, getAllClients, runUpdateNow, getLockStatus } from './store';
 import { isModuleEnabled, getUpcomingFilings, countsAsSales, localToday, toLocalIsoDate, DOCS_URL, findLowStock, trackedStock } from './utils';
 import { orderedMenu } from './utils/businessTypes';
+import { setActiveRules } from './utils/remoteRules';
 // v1.10.4 — Route-level lazy loading. Prior App.jsx synchronously
 // imported all 12 views (~15k LOC combined), so a first-paint on
 // Dashboard downloaded and parsed GSTReturns (1952), InvoiceGenerator
@@ -150,6 +151,11 @@ function App() {
         const data = await res.json();
         if (!cancelled) setUpdateInfo(data);
       } catch { /* offline — quietly skip */ }
+      try {
+        const rulesRes = await fetch('/api/rules');
+        const rulesData = await rulesRes.json();
+        if (rulesData?.rules) setActiveRules(rulesData.rules);
+      } catch {}
     };
     // First check ~5 seconds after mount so it doesn't fight the initial load.
     const initial = setTimeout(check, 5000);
@@ -1287,7 +1293,7 @@ function App() {
               {updateInfo.releaseNotes || (
                 <span style={{ color: 'var(--text-muted)' }}>
                   No release notes available — see the full changelog at{' '}
-                  <a href={updateInfo.releaseUrl || 'https://github.com/aman1455/gst-billing-desktop/releases'} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>GitHub Releases</a>.
+                  <a href={updateInfo.releaseUrl || 'https://github.com/aman1455/E-munim/releases'} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--primary)' }}>GitHub Releases</a>.
                 </span>
               )}
             </div>

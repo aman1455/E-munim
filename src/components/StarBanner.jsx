@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { Star, X } from 'lucide-react';
 
 const KEY = 'freegstbill_starBanner';
-const REPO = 'https://github.com/aman1455/gst-billing-desktop';
+const REPO = 'https://github.com/aman1455/E-munim';
 const DAY = 86400000;
 const FIRST_AFTER_DAYS = 3;
 const EVERY_DAYS = 30;

@@ -21,7 +21,7 @@ const inr = (n) => `₹${Number(n).toLocaleString('en-IN')}`;
 
 const SUPPORT_UPI_ID = '7455899201-3@ybl';
 const UPI_NAME = 'AmanNegi';
-const REPO = 'https://github.com/aman1455/gst-billing-desktop';
+const REPO = 'https://github.com/aman1455/E-munim';
 const EMAIL = 'contact@AmanNegi.com';
 const SITE = 'https://AmanNegi.com';
 // v1.10.83 - ₹200 is the smallest suggested amount; "Any amount" (0) comes last.

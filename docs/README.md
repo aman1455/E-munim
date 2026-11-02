@@ -14,4 +14,4 @@ overview and feature list — everything below is the deep-dive material.
 > Looking for installation? [Quick Start](../README.md#quick-start--installation) in the main README,
 > or the [User Guide](./USER_GUIDE.md#quick-start) for the step-by-step version.
 
-If you spot something stale in here, [open an issue](https://github.com/aman1455/gst-billing-desktop/issues) — docs drift faster than code.
+If you spot something stale in here, [open an issue](https://github.com/aman1455/E-munim/issues) — docs drift faster than code.

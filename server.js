@@ -1429,6 +1429,84 @@ app.get('/api/check-update', async (req, res) => {
 });
 
 // ============================================================
+// Remote Statutory Rules & Compliance Sync (Vercel Hub)
+// ============================================================
+const REMOTE_RULES_URL = process.env.REMOTE_RULES_URL || 'https://license-genrator.vercel.app/api/sync';
+const REMOTE_RULES_PATH = path.join(DATA_DIR, 'remote-rules.json');
+
+app.get('/api/rules', async (req, res) => {
+  try {
+    let rules = readJSON(REMOTE_RULES_PATH, null);
+    if (!rules && readJSON(LOCAL_PREFS_PATH, {}).gst_offlineMode !== '1') {
+      try {
+        const ctrl = new AbortController();
+        const t = setTimeout(() => ctrl.abort(), 4000);
+        const remoteRes = await fetch(REMOTE_RULES_URL, { signal: ctrl.signal }).catch(() => null);
+        clearTimeout(t);
+        if (remoteRes && remoteRes.ok) {
+          const fetched = await remoteRes.json();
+          if (fetched && fetched.version) {
+            rules = fetched;
+            writeFileAtomic(REMOTE_RULES_PATH, JSON.stringify(rules, null, 2));
+            const meta = readJSON(META_PATH, {});
+            meta.lastRulesSync = { at: new Date().toISOString(), version: rules.version, success: true };
+            writeJSON(META_PATH, meta);
+          }
+        }
+      } catch {}
+    }
+    const meta = readJSON(META_PATH, {});
+    res.json({
+      rules: rules || null,
+      lastSynced: meta.lastRulesSync || null,
+      remoteUrl: REMOTE_RULES_URL
+    });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to retrieve rules: ' + err.message });
+  }
+});
+
+app.post('/api/rules/sync', async (req, res) => {
+  const isOffline = readJSON(LOCAL_PREFS_PATH, {}).gst_offlineMode === '1';
+  if (isOffline && req.query.force !== '1') {
+    return res.status(400).json({ success: false, error: 'Offline mode is active. Cannot connect to remote hub.' });
+  }
+  try {
+    const ctrl = new AbortController();
+    const t = setTimeout(() => ctrl.abort(), 5000);
+    const remoteRes = await fetch(REMOTE_RULES_URL, {
+      signal: ctrl.signal,
+      headers: { 'Accept': 'application/json', 'User-Agent': 'FreeGSTBill-rules-sync' }
+    });
+    clearTimeout(t);
+    if (!remoteRes.ok) {
+      throw new Error('Remote hub responded with status ' + remoteRes.status);
+    }
+    const rules = await remoteRes.json();
+    if (!rules || !rules.version) {
+      throw new Error('Invalid rules format received from remote hub.');
+    }
+    writeFileAtomic(REMOTE_RULES_PATH, JSON.stringify(rules, null, 2));
+    const meta = readJSON(META_PATH, {});
+    meta.lastRulesSync = { at: new Date().toISOString(), version: rules.version, success: true };
+    writeJSON(META_PATH, meta);
+    return res.json({
+      success: true,
+      updated: true,
+      version: rules.version,
+      rules
+    });
+  } catch (err) {
+    const cached = readJSON(REMOTE_RULES_PATH, null);
+    return res.status(502).json({
+      success: false,
+      error: 'Could not sync rules from Vercel: ' + err.message,
+      cachedRules: cached
+    });
+  }
+});
+
+// ============================================================
 // v1.10.44 — In-app Control Panel API
 // Powers /control-panel in the app. Each endpoint shells out to
 // a platform-appropriate script under `_system-scripts/` — the copy inside

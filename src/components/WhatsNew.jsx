@@ -8,7 +8,7 @@ import { Bug, Lightbulb, CalendarClock, ListChecks, Sparkles } from 'lucide-reac
 import { parseChangelog, inlineParts } from '../utils/changelog';
 import HelpButton from './HelpButton';
 
-const REPO = 'https://github.com/aman1455/gst-billing-desktop';
+const REPO = 'https://github.com/aman1455/E-munim';
 const CHANGELOG_URL = `${REPO}/blob/main/CHANGELOG.md`;
 const card = { padding: '1.25rem 1.5rem' };
 

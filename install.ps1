@@ -33,7 +33,7 @@ $ProgressPreference = 'SilentlyContinue'
 # PowerShell 5.1 may still default to TLS 1.0, which GitHub refuses.
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$ZipUrl = 'https://github.com/aman1455/gst-billing-desktop/releases/latest/download/Free-GST-Billing.zip'
+$ZipUrl = 'https://github.com/aman1455/E-munim/releases/latest/download/Free-GST-Billing.zip'
 $Test = $env:FREEGSTBILL_TEST
 $NeedFreeMB = 600   # the ZIP, its unpacked copy, Node.js, and room to spare
 $script:KnownProblem = $false

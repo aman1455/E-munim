@@ -50,6 +50,10 @@ async function apiFetch(url, options = {}) {
   return res.json();
 }
 
+// ---- Statutory & Remote Rules Sync ----
+export const getRemoteRules = () => apiFetch(`${API}/rules`);
+export const syncRemoteRules = (force = false) => apiFetch(`${API}/rules/sync${force ? "?force=1" : ""}`, { method: "POST" });
+
 // ---- Licensing ----
 export const getLicenseStatus = () => apiFetch(`${API}/license/status`);
 export const activateLicense = (licenseKey) => apiFetch(`${API}/license/activate`, {

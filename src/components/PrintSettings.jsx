@@ -413,7 +413,7 @@ export default function PrintSettings() {
            your business" tags without asking the user again. */}
       <div style={{
         padding: '0.85rem 1rem',
-        background: 'linear-gradient(135deg, var(--primary-light, rgba(30,64,175,0.06)), var(--card))',
+        background: 'var(--card-bg)',
         border: '1px solid var(--border)',
         borderRadius: 10,
         marginBottom: '1rem',
@@ -481,7 +481,7 @@ export default function PrintSettings() {
            so the user can eyeball the vibe before committing. */}
       <div style={{
         padding: '0.85rem 1rem',
-        background: 'linear-gradient(135deg, var(--bg-secondary), var(--card))',
+        background: 'var(--card-bg)',
         border: '1px solid var(--border)',
         borderRadius: 10,
         marginBottom: '1rem',

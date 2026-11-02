@@ -24,7 +24,7 @@ Use the launcher: **More options → Update to the latest version**, then
 
 #### If that does not work (or you are unsure)
 1. Download `Free-GST-Billing.zip` from the
-   [Releases page](https://github.com/aman1455/gst-billing-desktop/releases/latest).
+   [Releases page](https://github.com/aman1455/E-munim/releases/latest).
 2. Close the app completely.
 3. Extract over your existing Free GST Billing folder, replacing files when asked.
 4. Double-click **Free GST Billing - WINDOWS**.
