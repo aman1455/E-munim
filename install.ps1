@@ -1,7 +1,7 @@
 # Free GST Billing - one-line install, update and repair for Windows.
 #
 #   Press Windows + R, paste this line, press Enter:
-#   powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/aman1455/gst-billing-desktop/main/install.ps1 | iex"
+#   powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/aman1455/E-munim/main/install.ps1 | iex"
 #
 # v1.10.83 - a file PowerShell fetches carries no "downloaded from the
 # internet" mark, so Windows SmartScreen shows no warning; and the release
@@ -11,7 +11,7 @@
 # registry, no service: everything stays under the user's own profile.
 #
 # To remove the app (it asks before deleting any data):
-#   powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; & ([scriptblock]::Create((irm https://raw.githubusercontent.com/aman1455/gst-billing-desktop/main/install.ps1))) -Uninstall"
+#   powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; & ([scriptblock]::Create((irm https://raw.githubusercontent.com/aman1455/E-munim/main/install.ps1))) -Uninstall"
 #
 # `iex` cannot pass parameters, so settings come from environment variables:
 #   FREEGSTBILL_DIR   install into (or update) this folder
@@ -256,7 +256,7 @@ function Install-App {
     }
     $inner = Get-ChildItem -LiteralPath $unpacked -Directory | Where-Object { Test-Path -LiteralPath (Join-Path $_.FullName '_system\server.js') } | Select-Object -First 1
     if (-not $inner -or -not (Test-Path -LiteralPath (Join-Path $inner.FullName '_system\node_modules\express\package.json'))) {
-      Fail 'The downloaded file is not a complete Free GST Billing package.' 'Run the same line again. If it happens again, report it: https://github.com/IamRamgarhia/Free-GST-Billing-Software/issues'
+      Fail 'The downloaded file is not a complete Free GST Billing package.' 'Run the same line again. If it happens again, report it: https://github.com/aman1455/E-munim/issues'
     }
     $newSys = Join-Path $inner.FullName '_system'
     $backup = if ($isUpdate) { Backup-Data $sys } else { $null }

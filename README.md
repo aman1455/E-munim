@@ -6,9 +6,9 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)](#quick-start--installation)
-[![Latest release](https://img.shields.io/github/v/release/IamRamgarhia/Free-GST-Billing-Software?label=Latest&color=orange)](https://github.com/aman1455/E-munim/releases/latest)
+[![Latest release](https://img.shields.io/github/v/release/aman1455/E-munim?label=Latest&color=orange)](https://github.com/aman1455/E-munim/releases/latest)
 [![Desktop icon](https://img.shields.io/badge/Desktop-one--click%20icon-purple.svg)](#the-free-gst-billing-icon)
-[![GitHub Stars](https://img.shields.io/github/stars/IamRamgarhia/Free-GST-Billing-Software?style=social)](https://github.com/aman1455/E-munim)
+[![GitHub Stars](https://img.shields.io/github/stars/aman1455/E-munim?style=social)](https://github.com/aman1455/E-munim)
 [![Countries](https://img.shields.io/badge/Countries-22-blue.svg)](#key-features)
 [![GST](https://img.shields.io/badge/GST-Compliant-success.svg)](#clipboard-gst-compliance--filing)
 
@@ -20,7 +20,7 @@ Your data never leaves your computer. No cloud and no limits. Open source, so yo
 
 **A free invoice builder and invoice maker** for shop owners, freelancers, consultants, traders and small businesses in India: make a GST invoice, quotation (proforma / estimate), bill of supply, credit note or delivery challan in minutes and save it as a PDF. Free billing software and a free, open-source alternative to Tally, Vyapar, Zoho and myBillBook.
 
-<a href="https://github.com/aman1455/E-munim/releases/latest/download/Free-GST-Billing.zip"><img src="https://img.shields.io/github/v/release/IamRamgarhia/Free-GST-Billing-Software?style=for-the-badge&label=%E2%AC%87%EF%B8%8F%20Download&color=16a34a&labelColor=15803d" alt="Download the latest version" height="48"></a>&nbsp;&nbsp;<a href="https://freeinvoicefast.com/docs/"><img src="https://img.shields.io/badge/%F0%9F%93%96%20Documentation-Read%20the%20guide-2563eb?style=for-the-badge&labelColor=1d4ed8" alt="Read the documentation" height="48"></a>
+<a href="https://github.com/aman1455/E-munim/releases/latest/download/Free-GST-Billing.zip"><img src="https://img.shields.io/github/v/release/aman1455/E-munim?style=for-the-badge&label=%E2%AC%87%EF%B8%8F%20Download&color=16a34a&labelColor=15803d" alt="Download the latest version" height="48"></a>&nbsp;&nbsp;<a href="https://freeinvoicefast.com/docs/"><img src="https://img.shields.io/badge/%F0%9F%93%96%20Documentation-Read%20the%20guide-2563eb?style=for-the-badge&labelColor=1d4ed8" alt="Read the documentation" height="48"></a>
 
 <sub>Always the newest version · about 16 MB · Windows, macOS and Linux in one ZIP · <a href="https://github.com/aman1455/E-munim/releases/latest">release notes</a></sub>
 
@@ -99,7 +99,7 @@ Free-GST-Billing/
 **Prefer one command?** Paste this into PowerShell — no admin rights needed:
 
 ```powershell
-[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/IamRamgarhia/Free-GST-Billing-Software/main/install.ps1 | iex
+[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/aman1455/E-munim/main/install.ps1 | iex
 ```
 
 It fetches the latest release, installs it to
@@ -188,7 +188,7 @@ You need: Windows 10/11 PC, ~50 MB free disk, your business name + bank details 
 5. The app opens by itself at `http://localhost:47371`, and a **Free GST Billing** icon is on your Desktop for next time
 
 > **Easier: one line, no ZIP, no warnings.** Press **Windows + R**, paste this, press **Enter**:
-> `powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/IamRamgarhia/Free-GST-Billing-Software/main/install.ps1 | iex"`
+> `powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/aman1455/E-munim/main/install.ps1 | iex"`
 > It installs the app, adds Desktop and Start-menu icons and opens it in its own window. Run it again any time to update or repair.
 
 > 💡 **Tip:** Click the small **Install App** icon in your browser's address bar to make the app open in its own window like Tally or Word — no browser chrome, looks and feels native.
@@ -480,13 +480,13 @@ If we priced every 🆕 feature at the going rate on the paid alternatives:
 **Windows:** press **Windows + R**, paste, press **Enter**:
 
 ```
-powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/IamRamgarhia/Free-GST-Billing-Software/main/install.ps1 | iex"
+powershell -ExecutionPolicy Bypass -c "[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/aman1455/E-munim/main/install.ps1 | iex"
 ```
 
 **Mac / Linux:** open Terminal, paste, press **Return**:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/IamRamgarhia/Free-GST-Billing-Software/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/aman1455/E-munim/main/install.sh | bash
 ```
 
 It checks the computer, downloads the release (packages included), installs to `%LOCALAPPDATA%\Programs\Free GST Billing` / `~/Applications/Free GST Billing` / `~/.local/share/free-gst-billing`, adds an icon (Desktop + Start menu, a Mac app, a Linux menu entry) and opens the app in its own window. **The same line updates or repairs** an existing install in place: `_system/data` is backed up first and never touched. Remove with `-Uninstall` (Windows: `& ([scriptblock]::Create((irm <url>/install.ps1))) -Uninstall`) or `| bash -s -- --uninstall`; data is only deleted if you type `DELETE`.
@@ -513,7 +513,7 @@ The one-line install (Option 0) takes the folder from `FREEGSTBILL_DIR`. In Powe
 
 ```powershell
 $env:FREEGSTBILL_DIR = 'D:\Apps\Free GST Billing'
-[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/IamRamgarhia/Free-GST-Billing-Software/main/install.ps1 | iex
+[Net.ServicePointManager]::SecurityProtocol='Tls12'; irm https://raw.githubusercontent.com/aman1455/E-munim/main/install.ps1 | iex
 ```
 
 On Mac / Linux: `curl -fsSL .../install.sh | FREEGSTBILL_DIR=/srv/free-gst-billing bash`. If the app is already in that folder it is updated in place; the data folder is never touched.
@@ -524,7 +524,7 @@ On Mac / Linux: `curl -fsSL .../install.sh | FREEGSTBILL_DIR=/srv/free-gst-billi
 
 ```bash
 git clone https://github.com/aman1455/E-munim.git
-cd Free-GST-Billing-Software
+cd E-munim
 npm install
 npm start                # production build + serve on http://localhost:47371
 ```
@@ -811,7 +811,7 @@ PDFs and JSON backups will auto-upload to your own Google Drive after every down
 ## Project Structure
 
 ```
-Free-GST-Billing-Software/
+E-munim/
 ├── server.js                     # Express API server (default port 47371, auto-scans if busy)
 ├── src/
 │   ├── App.jsx                   # Root layout, sidebar navigation, dark mode
